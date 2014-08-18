@@ -1,10 +1,15 @@
 class odroid::rc_d (){
+  package{'sysstat':
+    ensure => present,
+  }
+
   file{'/etc/init.d/status.sh':
     ensure => file,
     source => 'puppet:///modules/odroid/status.sh',
     mode => '0777',
     owner => 'root',
     group => 'root',
+    require => Package['sysstat'],
   }
 
   file{'/etc/init.d/port_open.c':
