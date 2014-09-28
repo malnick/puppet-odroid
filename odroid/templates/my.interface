@@ -1,0 +1,26 @@
+# MANAGED BY PUPPET
+# interfaces(5) file used by ifup(8) and ifdown(8)
+# Include files from /etc/network/interfaces.d:
+source-directory /etc/network/interfaces.d
+
+
+	 
+
+auto eth0
+iface eth0 inet dhcp
+netmask 255.255.255.0
+
+auto wlan2
+iface wlan2 inet static
+address 10.0.0.101
+netmask 255.255.255.0
+gateway 10.0.0.1
+dns-nameservers 10.0.0.1
+wpa-driver wext
+wpa-ssid schrodinger
+wpa-ap-scan 2
+wpa-proto RSN
+wpa-pairwise CCMP
+wpa-group CCMP
+wpa-key-mgmt WPA-PSK
+wpa-psk JKLjkl890*()
