@@ -3,7 +3,7 @@
 source-directory /etc/network/interfaces.d
 <% ip=100 %>
 <% while system("ping -t 3 10.0.0.#{ip} 2>&1>/dev/null") %>
-	<% ip+=1 %>
+	<% ip+=1 %> 
 <% end %>
 auto eth0
 iface eth0 inet dhcp
