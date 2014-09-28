@@ -2,12 +2,9 @@ class odroid::network(){
 
   file{'/etc/network/interfaces':
     ensure => file,
-    content => template('odroid/interfaces.erb'),
-    notify => Service['networking'],
+    content => template('odroid/interfaces'),
   }
 
-  service{'networking':
-    ensure => running,
-    enable => true,
-    }
+
+
 }
